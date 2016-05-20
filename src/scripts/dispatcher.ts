@@ -1,11 +1,11 @@
 import * as Bacon from "baconjs";
 
-interface Hundler {
+interface IHundler {
     [index: string]: Bacon.Bus<any, any>;
 }
 
 export class Dispatcher {
-    private hundlers: Hundler;
+    private hundlers: IHundler;
 
     constructor() {
         this.hundlers = {};

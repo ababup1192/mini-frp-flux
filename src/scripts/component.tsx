@@ -22,13 +22,18 @@ export class Component extends React.Component<any, { count: number }> {
         });
     }
 
-    private tick(): void {
+    public handleUp(): void {
         this.action.countUp();
+    }
+
+    public handleDown(): void {
+        this.action.countDown();
     }
 
     public render(): JSX.Element {
         return <div>
-            <button onClick={this.tick.bind(this) }>Count Up</button>
+            <button onClick={this.handleUp.bind(this) }>Count Up</button>
+            <button onClick={this.handleDown.bind(this) }>Count Down</button>
             <p>
                 Count: {this.state.count }
             </p>
